@@ -101,10 +101,9 @@ public class MongoUtil {
      * @param collName
      * @return
      */
-    public int update(DBObject find, DBObject update, boolean upsert, boolean multi, String collName) {
+    public void update(DBObject find, DBObject update, boolean upsert, boolean multi, String collName) {
         DBCollection collection = db.getCollection(collName);
-        int count = collection.update(find, update, upsert, multi).getN();
-        return count;
+        collection.update(find, update, upsert, multi);
     }
 
     /**
