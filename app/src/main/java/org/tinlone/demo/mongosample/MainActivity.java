@@ -153,7 +153,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private List<String> update() {
         DBObject kid = new BasicDBObject();
-        kid.put("age", 16);
+//         kid.put("age", 16); //debug : this will cause update fail
         DBObject find = new BasicDBObject();
         find.put("$set", new BasicDBObject("age", age));
         util.update(kid, find, false, true, "test");
